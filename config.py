@@ -14,7 +14,9 @@ def add_argument_group(name):
 
 # Network
 net_arg = add_argument_group('Network')
-net_arg.add_argument('--input_scale_size', type=int, default=64,
+# net_arg.add_argument('--input_scale_size', type=int, default=64,
+#                      help='input image will be resized with the given value as width and height')
+net_arg.add_argument('--input_scale_size', type=int, default=128,
                      help='input image will be resized with the given value as width and height')
 net_arg.add_argument('--conv_hidden_num', type=int, default=128,
                      choices=[64, 128],help='n in the paper')
@@ -24,7 +26,8 @@ net_arg.add_argument('--z_num', type=int, default=64, choices=[64, 128])
 data_arg = add_argument_group('Data')
 data_arg.add_argument('--dataset', type=str, default='CelebA')
 data_arg.add_argument('--split', type=str, default='train')
-data_arg.add_argument('--batch_size', type=int, default=16)
+#data_arg.add_argument('--batch_size', type=int, default=16)
+data_arg.add_argument('--batch_size', type=int, default=2)
 data_arg.add_argument('--grayscale', type=str2bool, default=False)
 data_arg.add_argument('--num_worker', type=int, default=4)
 
