@@ -290,7 +290,7 @@ class Trainer(object):
 
         generated = []
         for idx, ratio in enumerate(np.linspace(0, 1, 10)):
-            z = np.stack([slerp(ratio, r1, r2) for r1, r2 in zip(z1, z2)])
+            #z = np.stack([slerp(ratio, r1, r2) for r1, r2 in zip(z1, z2)])
             z_decode = self.generate(z, save=False)
             generated.append(z_decode)
 
